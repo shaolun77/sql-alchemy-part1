@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{user.name}}</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
@@ -39,6 +41,19 @@
                 formmethod="POST">Delete
         </button>
       </form>
+
+      <h2 class="mt-4">Posts</h2>
+
+      <ul>
+        {% for post in user.posts %}
+        <li>
+          <a href="/posts/{{ post.id}}">{{ post.title }}</a>
+          <small>{{ post.friendly_date }}</small>
+        </li>
+        {% endfor %}
+      </ul>
+  
+      <p><a href="/users/{{ user.id }}/posts/new" class="btn btn-primary">Add Post</a></p>
   
     </div>
   </div>

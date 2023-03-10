@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <title>Edit Post</title>
+</head>
+
+<body>
+<h1>Edit Post</h1>
+<form method="POST">
+  <!-- Bootstrap - single line form -->
+    <div class="form-group row">
+      <label for="title" class="col-sm-2 col-form-label">Title</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="title" name="title" value="{{ post.title }}>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="content" class="col-sm-2 col-form-label">Content</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="content" name="content">{{ post.content }}</textarea>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <div class="ml-auto mr-3">
+        <a href="/users/{{ user.id }}" class="btn btn-info">Cancel</a>
+        <button type="submit" class="btn btn-success">Edit</button>
+      </div>
+    </div>
+  
+  </form>
+</body>
+
+</html>  
+
+
+
